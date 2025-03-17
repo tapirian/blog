@@ -10,7 +10,7 @@ export default withMermaid({
   cleanUrls: true,
   title: "一介白衣ing",
   description: "everything will be fine",
-  base: "/vitepress-blog/",
+  base: "/blog/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
