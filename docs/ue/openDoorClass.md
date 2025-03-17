@@ -11,13 +11,16 @@ A[新建类蓝图] ---> B(添加门和碰撞盒组件) ---> C(新建碰撞盒开
 ```
 ## 实现过程
 ### 1. 首先我们新建一个蓝图类，然后添加两个组件静态网格体（`static mesh`）, 选择实例为门、门框
-<video src="./video/openDoorClass-1.mp4" controls width="600"></video>
+<!-- <video src="./video/openDoorClass-1.mp4" controls width="600"></video> -->
+<iframe src="https://player.youku.com/embed/XNjQ2MjE4NzY2OA" scrolling="no" border="0" frameborder="no" width="800" height="450" framespacing="0" allowfullscreen="true"></iframe>
 
 ### 2. 添加组件碰撞盒（`box collision`）, 新建碰撞盒的触发重叠开始事件（`EventActorBeginOverlap`），输出引脚连接到设置门的旋转度（`SetRelativeRotation`），将蓝图类拖放到场景中测试开门动作。
-<video src="./video/openDoorClass-2.mp4" controls width="600"></video>
+<!-- <video src="./video/openDoorClass-2.mp4" controls width="600"></video> -->
+<iframe src="https://player.youku.com/embed/XNjQ2OTg3NjU2NA" scrolling="no" border="0" frameborder="no" width="800" height="450" framespacing="0" allowfullscreen="true"></iframe>
 
 ### 3. 设置时间线，完成开关门
-<video src="./video/openDoorClass-3.mp4" controls width="600"></video>
+<!-- <video src="./video/openDoorClass-3.mp4" controls width="600"></video> -->
+<iframe src="https://player.youku.com/embed/XNjQ2OTg3OTI1Ng" scrolling="no" border="0" frameborder="no" width="800" height="450" framespacing="0" allowfullscreen="true"></iframe>
 
 ## 说明
 

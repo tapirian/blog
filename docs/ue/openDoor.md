@@ -8,16 +8,20 @@
 
 ## 实现过程
 ### 1. 给门添加触发盒，并设置门为可移动
-<video src="./video/openDoor-1.mp4" controls width="600"></video>
+<!-- <video src="./video/openDoor-1.mp4" controls width="600"></video> -->
+<iframe src="https://player.youku.com/embed/XNjQ2OTg3NDk2NA" scrolling="no" border="0" frameborder="no" width="800" height="450" framespacing="0" allowfullscreen="true"></iframe>
 
 ### 2. 选中关卡中的门，打开关卡蓝图，设置门的旋转角度
-<video src="./video/openDoor-2.mp4" controls width="600"></video>
+<!-- <video src="./video/openDoor-2.mp4" controls width="600"></video> -->
+<iframe src="https://player.youku.com/embed/XNjQ2OTg3OTIwNA" scrolling="no" border="0" frameborder="no" width="800" height="450" framespacing="0" allowfullscreen="true"></iframe>
 
 ### 3. 选中触发盒，完成开门动效
-<video src="./video/openDoor-3.mp4" controls width="600"></video>
+<!-- <video src="./video/openDoor-3.mp4" controls width="600"></video> -->
+<iframe src="https://player.youku.com/embed/XNjQ2MjE4NzY1Ng" scrolling="no" border="0" frameborder="no" width="800" height="450" framespacing="0" allowfullscreen="true"></iframe>
 
 ### 4. 设置时间线，完成开关门
-<video src="./video/openDoor-4.mp4" controls width="600"></video>
+<!-- <video src="./video/openDoor-4.mp4" controls width="600"></video> -->
+<iframe src="https://player.youku.com/embed/XNjQ2OTg3NjU0MA" scrolling="no" border="0" frameborder="no" width="800" height="450" framespacing="0" allowfullscreen="true"></iframe>
 
 时间轴连接Play表示从当前时间播放；时间轴连接Reverse表示从当前时间逆向播放
 
