@@ -1,16 +1,13 @@
-<!--
-**yijiebaiyi/yijiebaiyi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<!-- [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yijiebaiyi&layout=pie)](https://github.com/yijiebaiyi)
+[![Harlok's WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=yijiebaiyi)](https://github.com/anuraghazra/github-readme-stats) -->
+<div align="center">
 
-Here are some ideas to get you started:
+滴水何须随群浪，孤禽岂必慕鱼虾。
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=yijiebaiyi&layout=pie)](https://github.com/yijiebaiyi)
-<!-- [![Harlok's WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=yijiebaiyi)](https://github.com/anuraghazra/github-readme-stats) -->
+朝饮玉露栖云岫，暮采霞光映荻花。
+
+万壑松风鸣素志，千江皓月洗浮华。
+
+各安本性存真意，自守方圆即海涯。
+
+</div>

@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "一介白衣ing"
   text: ""
-  tagline: vitepress用来写博客也不错。 
+  # tagline: 一些技术文章 
   actions:
     - theme: brand
       text: 技术
