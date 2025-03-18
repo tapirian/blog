@@ -14,9 +14,11 @@ A[新建类蓝图] ---> B(添加门和碰撞盒组件) ---> C(新建碰撞盒开
 <!-- <video src="./video/openDoorClass-1.mp4" controls width="600"></video> -->
 <iframe src="https://player.youku.com/embed/XNjQ2MjE4NzY2OA" scrolling="no" border="0" frameborder="no" width="800" height="450" framespacing="0" allowfullscreen="true"></iframe>
 
-### 2. 添加组件碰撞盒（`box collision`）, 新建碰撞盒的触发重叠开始事件（`EventActorBeginOverlap`），输出引脚连接到设置门的旋转度（`SetRelativeRotation`），将蓝图类拖放到场景中测试开门动作。
+### 2. 添加组件碰撞盒（`box collision`）, 新建碰撞盒的触发重叠开始事件（`OnComponentBeginOverlap`），输出引脚连接到设置门的旋转度（`SetRelativeRotation`），将蓝图类拖放到场景中测试开门动作。
 <!-- <video src="./video/openDoorClass-2.mp4" controls width="600"></video> -->
 <iframe src="https://player.youku.com/embed/XNjQ2OTg3NjU2NA" scrolling="no" border="0" frameborder="no" width="800" height="450" framespacing="0" allowfullscreen="true"></iframe>
+
+> 思考：为什么要用 `SetRelativeRotation`呢？
 
 ### 3. 设置时间线，完成开关门
 <!-- <video src="./video/openDoorClass-3.mp4" controls width="600"></video> -->
@@ -26,3 +28,17 @@ A[新建类蓝图] ---> B(添加门和碰撞盒组件) ---> C(新建碰撞盒开
 
 - 碰撞盒必须和门同级，不能放在门下级，不然会随着门的旋转而旋转，这不是我们想要的效果。
 - 设置旋转角度方法为`SetRelativeRotation`，表示相对坐标（模型本身），这样如果我们把模型拖动到场景中，不会因为拖放角度不同而改变。
+
+## 相关事件对比
+### 设置旋转角度
+| 参数 | 含义 |
+|-------------|---------------|
+| SetActorRotation | 设置当前蓝图类所有组件的旋转 | 
+| SetRelativeRotation | 设置当前组件的相对旋转|
+| SetWorldRotation| 设置世界坐标的旋转| 
+
+### 触发重叠事件
+| 参数 | 含义 |
+|-------------|---------------|
+| Event ActorBeginOverlap | 基于整个Actor的碰撞体触发 | 
+| OnComponentBeginOverlap | 基于特定组件的碰撞体触发。 |

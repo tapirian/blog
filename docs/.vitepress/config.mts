@@ -131,6 +131,7 @@ export default withMermaid({
           { text: "UE静态网格体合并", link: "/ue/staticMeshMerge" },
           { text: "UE使用关卡蓝图实现开关门", link: "/ue/openDoor" },
           { text: "UE使用类蓝图实现开关门", link: "/ue/openDoorClass" },
+          { text: "UE按键和鼠标实现开关门", link: "/ue/openDoorClick" },
         ],
       },
       {

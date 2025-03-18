@@ -54,7 +54,7 @@ GRANT CREATE USER ON . TO 'dba'@'10.0.0.%';
 **关键参数说明**：
 - `privileges`：`SELECT`/`INSERT`/`UPDATE`/`DELETE`/`ALL PRIVILEGES`等
 - `object`：`*.*`（全局）、`dbname.*`（数据库级）、`dbname.tablename`（表级）
-- `WITH GRANT OPTION`：允许权限传递 (#资料)
+- `WITH GRANT OPTION`：允许权限传递
 
 ### 2.2 撤销权限（REVOKE）
 ```sql
@@ -78,7 +78,7 @@ REVOKE GRANT OPTION ON mydb.* FROM 'user1'@'localhost';
 | 列层级      | 表中特定列                | mysql.columns_priv  | `GRANT SELECT(id) ON mydb.users TO ...` |
 | 存储过程    | 特定存储过程/函数         | mysql.procs_priv    | `GRANT EXECUTE ON PROCEDURE ...`  |
 
-**注意**：列级权限需指定具体列名，例如`GRANT SELECT(name) ON mydb.users TO ...` (#资料)
+**注意**：列级权限需指定具体列名，例如`GRANT SELECT(name) ON mydb.users TO ...` 
 
 ---
 
@@ -143,7 +143,7 @@ GRANT 'role_read' TO 'user1'@'localhost';
 SET DEFAULT ROLE ALL TO 'user1'@'localhost';
 ```
 
-**优势**：通过角色实现权限组管理，简化多用户权限分配 (#资料)
+**优势**：通过角色实现权限组管理，简化多用户权限分配 
 
 ---
 
@@ -174,7 +174,7 @@ audit_log_format=JSON
 SHOW VARIABLES LIKE 'audit_log_file';
 ```
 
-**对比**：插件方案记录更详细但影响性能，init_connect适合轻量级审计 (#资料)
+**对比**：插件方案记录更详细但影响性能，init_connect适合轻量级审计
 
 ---
 
