@@ -8,7 +8,7 @@ hero:
   # tagline: 一些技术文章 
   actions:
     - theme: brand
-      text: 技术
+      text: 文章
       link: /homepage
     - theme: alt
       text: 关于 

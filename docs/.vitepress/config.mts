@@ -119,19 +119,23 @@ export default withMermaid({
         items: [
           { text: "RabbitMQ基础", link: "/rabbitmq/start" },
         ],
-      },
-      {
+      }, {
         text: "UE",
-        collapsible: true, 
+        collapsible: true,
         collapsed: true,
         items: [
-          { text: "UE术语概览", link: "/ue/start" },
-          { text: "UE基础之蓝图", link: "/ue/blueprint" },
-          { text: "UE静态网格体设置碰撞", link: "/ue/collision" },
-          { text: "UE静态网格体合并", link: "/ue/staticMeshMerge" },
-          { text: "UE使用关卡蓝图实现开关门", link: "/ue/openDoor" },
-          { text: "UE使用类蓝图实现开关门", link: "/ue/openDoorClass" },
-          { text: "UE按键和鼠标实现开关门", link: "/ue/openDoorClick" },
+          {
+            text: "基础",
+            items: [
+              { text: "UE术语概览", link: "/ue/novice/start" },
+              { text: "UE基础之蓝图", link: "/ue/novice/blueprint" },
+              { text: "UE静态网格体设置碰撞", link: "/ue/novice/collision" },
+              { text: "UE静态网格体合并", link: "/ue/novice/staticMeshMerge" },
+              { text: "UE使用关卡蓝图实现开关门", link: "/ue/novice/openDoor" },
+              { text: "UE使用类蓝图实现开关门", link: "/ue/novice/openDoorClass" },
+              { text: "UE按键和鼠标实现开关门", link: "/ue/novice/openDoorClick" },
+            ],
+          },
         ],
       },
       {

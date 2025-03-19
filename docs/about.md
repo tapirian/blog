@@ -2,9 +2,6 @@
 outline: deep
 ---
 
-# 关于
-
-随便写写。
 
 有问题请在github发布issues: https://github.com/yijiebaiyi/vitepress-blog
 
