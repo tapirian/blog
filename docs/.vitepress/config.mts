@@ -23,9 +23,9 @@ export default withMermaid({
         collapsible: true, 
         collapsed: true,
         items: [
+          { text: "研发安全攻防", link: "/security/attack_and_guard" },
           { text: "对称加密和非对称加密", link: "/security/encryption" },
           { text: "OpenSSL介绍", link: "/security/openssl" },
-          { text: "研发安全攻防", link: "/security/attack_and_guard" },
         ],
       },
       {
@@ -128,12 +128,13 @@ export default withMermaid({
             text: "基础",
             items: [
               { text: "UE术语概览", link: "/ue/novice/start" },
-              { text: "UE基础之蓝图", link: "/ue/novice/blueprint" },
+              // { text: "UE基础之蓝图", link: "/ue/novice/blueprint" },
               { text: "UE静态网格体设置碰撞", link: "/ue/novice/collision" },
               { text: "UE静态网格体合并", link: "/ue/novice/staticMeshMerge" },
               { text: "UE使用关卡蓝图实现开关门", link: "/ue/novice/openDoor" },
               { text: "UE使用类蓝图实现开关门", link: "/ue/novice/openDoorClass" },
               { text: "UE按键和鼠标实现开关门", link: "/ue/novice/openDoorClick" },
+              { text: "UE拾取钥匙开关门", link: "/ue/novice/openDoorByKey" },
             ],
           },
         ],
