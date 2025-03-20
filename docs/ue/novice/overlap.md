@@ -1,4 +1,4 @@
-# Unreal Engine蓝图操作之Overlap
+# 蓝图操作之Overlap
 
 ## 概述
 在Unreal Engine（UE）中，**Overlap事件**是用于检测两个物体重叠的核心机制，常用于触发区域交互、关卡切换、伤害判定等场景。与阻塞碰撞（Block）不同，Overlap允许物体相互穿透，但会在重叠发生时触发事件，为游戏逻辑提供灵活的控制手段。
