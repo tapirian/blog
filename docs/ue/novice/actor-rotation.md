@@ -42,3 +42,10 @@ B--->F
 
 
 
+## 扩展
+### 根据actor对象索引实现单个actor旋转
+![图片](./image/actorRotateSelf-2.png)
+
+
+### 实现每个actor都旋转
+![图片](./image/actorRotateSelf-1.png)
