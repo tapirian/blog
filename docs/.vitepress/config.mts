@@ -136,6 +136,7 @@ export default withMermaid({
               { text: "拾取钥匙开关门", link: "/ue/novice/openDoorByKey" },
               { text: "实现角色经过某一区域加速", link: "/ue/novice/characterSpeed" },
               { text: "按键实现物体自转", link: "/ue/novice/actorRotation" },
+              { text: "切换关卡中角色控制权", link: "/ue/novice/possessPawn" },
               { text: "实现一个解谜小游戏", link: "/ue/novice/roomEscape" },
             ],
           },
