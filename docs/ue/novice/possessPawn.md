@@ -12,7 +12,7 @@
 ### 实现思路
 按下数字键`1`，调用`multiGate`事件，循环输出到不同角色的切换事件。
 #### 技巧 
-- 可以使用`Set View Targe with Blend`节点来实现切换效果
+- 可以使用`Set View Targe with Blend`节点来实现切换过渡效果
 - 可以使用`Collapse Node`折叠节点，或者`Collapse to Macro`折叠到宏（有`delay`节点和`gate`不能转函数），方便重复调用
 - 可以判断动效完成状态，避免重复执行。
 
@@ -29,6 +29,6 @@
 | 节点名称 | 场景 |
 |-------------|---------------|
 | MultiGate  | 复合门，可以执行循环、随机输出多个 |
-| Set View Targe With Blend  | 视角转化效果 | 
+| Set View Targe With Blend  | 视角切换过渡效果 | 
 | Delay  | 延迟执行 | 
 | Possess  | 玩家控制器方法，设置当前控制当前角色 | 
