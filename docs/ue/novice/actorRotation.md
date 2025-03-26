@@ -23,7 +23,7 @@ C --false-->E[输出错误]
 #### 旋转自定义事件
 ```mermaid
 graph TD
-A[新建事件RotateOrNot] ---> B[判断CanRotate] --true--> C[Set CanRotate=false] 
+A[新建事件RotateOrNot] ---> B{判断CanRotate} --true--> C[Set CanRotate=false] 
 B--false--> J[Set CanRotate=true]
 ```
 
@@ -31,7 +31,7 @@ B--false--> J[Set CanRotate=true]
 ### 蓝图2：现有的第三人称角色蓝图 `ThirdPersonCharacter`
 ```mermaid
 graph TD
-A[新建事件图标，新建变量RotateRef] ---> B[关联RotateRef为BP_RotateSelf引用] ---> C[判断RotateRef是否合法] --Is Valid--> D[调用RotateOrNot]
+A[新建事件图标，新建变量RotateRef] ---> B[关联RotateRef为BP_RotateSelf引用] ---> C{RotateRef是否合法} --Is Valid--> D[调用RotateOrNot]
 C--IsNotValid-->E[输出错误]
 F[添加按键事件1] --->C
 B--->F
