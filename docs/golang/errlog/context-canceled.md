@@ -1,7 +1,7 @@
 # rpc error: code = canceled desc = context canceled
 
 ## 错误说明
-运行时上下文被取消，报错。
+调用rpc接口时上下文被取消，报错。
 
 ## 场景复现
 rpc方法中，在协程调用了另一个rpc方法，并将主协程context作为参数传递。当主协程结束之后，context被取消，子协程中调用rpc失败。
