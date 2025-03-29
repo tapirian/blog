@@ -65,7 +65,20 @@ export default withMermaid({
         collapsible: true, 
         collapsed: true,
         items: [
-          { text: "Golang通道", link: "/golang/channel" },
+          {
+            text: "基础",
+            items: [
+              { text: "sync.WaitGroup的noCopy机制", link: "/golang/basic/waitGroup-noCopy" },
+              { text: "无缓冲通道", link: "/golang/basic/unbuffered-channel" },
+              { text: "有缓冲通道", link: "/golang/basic/buffered-channel" },
+            ],
+          },
+          {
+            text: "问题日志",
+            items: [
+              { text: "【rpc error】code = canceled desc = context canceled", link: "/golang/errlog/context-canceled" },
+            ],
+          }
         ],
       },
       {
@@ -119,7 +132,8 @@ export default withMermaid({
         items: [
           { text: "RabbitMQ基础", link: "/rabbitmq/start" },
         ],
-      }, {
+      },
+      {
         text: "UE",
         collapsible: true,
         collapsed: true,
@@ -127,18 +141,18 @@ export default withMermaid({
           {
             text: "基础",
             items: [
-              { text: "UE术语概览", link: "/ue/novice/start" },
-              { text: "静态网格体设置碰撞", link: "/ue/novice/collision" },
-              { text: "静态网格体合并", link: "/ue/novice/staticMeshMerge" },
-              { text: "使用关卡蓝图实现开关门", link: "/ue/novice/openDoor" },
-              { text: "使用类蓝图实现开关门", link: "/ue/novice/openDoorClass" },
-              { text: "按键和鼠标实现开关门", link: "/ue/novice/openDoorClick" },
-              { text: "拾取钥匙开关门", link: "/ue/novice/openDoorByKey" },
-              { text: "实现角色经过某一区域加速", link: "/ue/novice/characterSpeed" },
-              { text: "按键实现物体自转", link: "/ue/novice/actorRotation" },
-              { text: "切换关卡中角色控制权", link: "/ue/novice/possessPawn" },
-              { text: "实现一个解谜小游戏（第一关）", link: "/ue/novice/roomEscape1" },
-              { text: "实现一个解谜小游戏（第二关）", link: "/ue/novice/roomEscape2" },
+              { text: "UE术语概览", link: "/ue/basic/start" },
+              { text: "静态网格体设置碰撞", link: "/ue/basic/collision" },
+              { text: "静态网格体合并", link: "/ue/basic/staticMeshMerge" },
+              { text: "使用关卡蓝图实现开关门", link: "/ue/basic/openDoor" },
+              { text: "使用类蓝图实现开关门", link: "/ue/basic/openDoorClass" },
+              { text: "按键和鼠标实现开关门", link: "/ue/basic/openDoorClick" },
+              { text: "拾取钥匙开关门", link: "/ue/basic/openDoorByKey" },
+              { text: "实现角色经过某一区域加速", link: "/ue/basic/characterSpeed" },
+              { text: "按键实现物体自转", link: "/ue/basic/actorRotation" },
+              { text: "切换关卡中角色控制权", link: "/ue/basic/possessPawn" },
+              { text: "实现一个解谜小游戏（第一关）", link: "/ue/basic/roomEscape1" },
+              { text: "实现一个解谜小游戏（第二关）", link: "/ue/basic/roomEscape2" },
             ],
           },
         ],
