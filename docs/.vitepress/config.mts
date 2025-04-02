@@ -172,6 +172,7 @@ export default withMermaid({
         collapsed: true,
         items: [
           { text: "VSCode异机同步已安装扩展", link: "/tools/vscode-install-extensions" },
+          { text: "Cursor VS Trae", link: "/tools/cursor-vs-trae" },
         ],
       },
       {
