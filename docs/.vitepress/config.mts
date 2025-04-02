@@ -162,7 +162,8 @@ export default withMermaid({
         collapsible: true, 
         collapsed: true,
         items: [
-          { text: "好用的AI工具汇总", link: "/ai/tools" },
+          // { text: "好用的AI工具汇总", link: "/ai/tools" },
+          { text: "claude根据效果图生成web页面", link: "/ai/claude" },
         ],
       },
       {
