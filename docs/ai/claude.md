@@ -12,11 +12,11 @@
 
 ## 案例一：安防系统首页面
 找到一个安防系统首页面，上传。
-![claude](./claude/images/claude-1.png)
+![claude](./images/claude/claude-1.png)
 生成的文件都在右侧页面，可以随意点选切换。
 
 **生成效果**
-![claude](./claude/images/claude-2.png)
+![claude](./images/claude/claude-2.png)
 可以说生成的效果和原图比较接近了。离谱的是它连svg都自动生成了。
 
 
@@ -24,10 +24,10 @@
 来个稍微复杂一点的，随手找个英语网站截图。
 
 **原图**
-![claude](./claude/images/claude-4.png)
+![claude](./images/claude/claude-4.png)
 
 **生成效果**
-![claude](./claude/images/claude-3.png)
+![claude](./images/claude/claude-3.png)
 
 炸裂！！！！
 
@@ -35,12 +35,12 @@
 来一个简易的后台管理系统
 
 **输入命令**
-![claude](./claude/images/claude-7.png)
+![claude](./images/claude/claude-7.png)
 
 **效果图**
-![claude](./claude/images/claude-5.png)
-![claude](./claude/images/claude-6.png)
+![claude](./images/claude/claude-5.png)
+![claude](./images/claude/claude-6.png)
 **交互**也是可以的：
-![claude](./claude/images/claude-1.gif)
+![claude](./images/claude/claude-1.gif)
 ## 扩展
 服务端代码的生成效果也相当可以。可以用来生成小工具嵌入到网站中。
