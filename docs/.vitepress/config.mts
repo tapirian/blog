@@ -167,6 +167,14 @@ export default withMermaid({
         ],
       },
       {
+        text: "工具",
+        collapsible: true, 
+        collapsed: true,
+        items: [
+          { text: "VSCode异机同步已安装扩展", link: "/tools/vscode-install-extensions" },
+        ],
+      },
+      {
         text: "关于",
         link: "/about"
       },
