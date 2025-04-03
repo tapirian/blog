@@ -29,6 +29,14 @@ export default withMermaid({
         ],
       },
       {
+        text: "网络",
+        collapsible: true, 
+        collapsed: true,
+        items: [
+          { text: "使用Let'Encrypt生成SSL证书", link: "/network/ssl-cert-generate" },
+        ],
+      },
+      {
         text: "算法",
         collapsible: true,
         collapsed: true,
@@ -90,12 +98,45 @@ export default withMermaid({
         ],
       },
       {
+        text: "C && C++",
+        collapsible: true, 
+        collapsed: true,
+        items: [
+          { text: "C++的内存动态分配", link: "/cpp/cpp" },
+        ],
+      },
+      {
+        text: "Rust",
+        collapsible: true, 
+        collapsed: true,
+        items: [
+          { text: "Dioxus VS Tauri", link: "/rust/dioxus-tauri-comparison" },
+        ],
+      },
+      {
         text: "大前端",
         collapsible: true, 
         collapsed: true,
         items: [
           { text: "Vue双向绑定的原理", link: "/web/vue-binding" },
           { text: "Micro-app入门指南", link: "/web/micro-app-start" },
+          { text: "Puppeteer VS Playwright", link: "/web/puppeteer-playwright-comparison" },
+        ],
+      },
+      {
+        text: "Docker",
+        collapsible: true, 
+        collapsed: true,
+        items: [
+          { text: "Docker项目部署全流程", link: "/docker/docker-deploy" },
+        ],
+      },
+      {
+        text: "Linux && Shell",
+        collapsible: true, 
+        collapsed: true,
+        items: [
+          { text: "Linux最常用命令总结", link: "/linux/command-usage" },
         ],
       },
       {

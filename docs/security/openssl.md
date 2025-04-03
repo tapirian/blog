@@ -62,6 +62,38 @@ openssl s_server -CAfile ca.crt -cert service.pem -key service.key -Verify 1
 | 测试HTTPS连接          | `openssl s_client -connect example.com:443 -tlsextdebug`                   |
 | 生成CSR                | `openssl req -new -key key.pem -out request.csr`                           |
 
+
+## 四、生成SSL证书（测试版，浏览器会弹不安全警告）
+### 生成私钥和CSR（证书签名请求）
+
+```bash
+# 创建存放证书的目录
+sudo mkdir -p /etc/nginx/ssl
+
+# 生成私钥
+sudo openssl genrsa -out /etc/nginx/ssl/example.com.key 2048
+
+# 生成CSR（证书签名请求）
+sudo openssl req -new -key /etc/nginx/ssl/example.com.key -out /etc/nginx/ssl/example.com.csr
+```
+
+运行最后一个命令时，您需要提供以下信息：
+- Country Name (国家代码): 例如CN
+- State (省/州): 例如Guangdong
+- Locality (城市): 例如Shenzhen
+- Organization (组织): 您的公司名称
+- Organizational Unit (部门): 您的部门
+- Common Name (域名): **重要** 填写您的网站域名 example.com
+- Email Address: 您的邮箱
+- 密码和选项挑战: 可以留空
+
+### 自签名证书（测试环境）
+
+```bash
+sudo openssl x509 -req -days 365 -in /etc/nginx/ssl/example.com.csr -signkey /etc/nginx/ssl/example.com.key -out /etc/nginx/ssl/example.com.crt
+```
+
+> 生产环境需要购买商用证书，或者使用Let'Encrypt生成i
 ---
 
 **核心价值**：OpenSSL为网络安全提供基础密码学工具链，覆盖从数据加密到身份认证的全链路安全需求。
