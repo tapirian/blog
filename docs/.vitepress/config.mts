@@ -95,6 +95,7 @@ export default withMermaid({
         collapsed: true,
         items: [
           { text: "Nodejs事件循环", link: "/nodejs/eventloop" },
+          { text: "node-addon开发C++插件", link: "/nodejs/node-addon-call-c-library" },
         ],
       },
       {
@@ -216,6 +217,14 @@ export default withMermaid({
           { text: "Cursor VS Trae", link: "/tools/cursor-vs-trae" },
         ],
       },
+      {
+        text: "项目部署",
+        collapsible: true, 
+        collapsed: true,
+        items: [
+          { text: "gitlab CI/CD", link: "/project/ci-cd" },
+        ],
+      },,
       {
         text: "关于",
         link: "/about"
