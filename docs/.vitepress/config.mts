@@ -204,6 +204,15 @@ export default withMermaid({
         collapsible: true, 
         collapsed: true,
         items: [
+          {
+            text: "stableDiffusion",
+            collapsible: true, 
+            collapsed: true,
+            items: [
+              { text: "controlNet让stableDiffusion更可控", link: "/ai/sd/sd-controlnet" },
+              { text: "stableDiffusion提示词模板", link: "/ai/sd/sd-prompt-templates" },
+            ],
+          },
           // { text: "好用的AI工具汇总", link: "/ai/tools" },
           { text: "claude根据效果图生成web页面", link: "/ai/claude" },
         ],
