@@ -141,6 +141,14 @@ export default withMermaid({
         ],
       },
       {
+        text: "Windows",
+        collapsible: true, 
+        collapsed: true,
+        items: [
+          { text: "共享网络打印机凭证冲突", link: "/windows/print-share-conflict" },
+        ],
+      },
+      {
         text: "MySQL",
         collapsible: true,    // ✅ 启用折叠功能
         collapsed: true,       // ✅ 初始折叠状态
