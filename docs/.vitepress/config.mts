@@ -214,14 +214,21 @@ export default withMermaid({
         items: [
           {
             text: "stableDiffusion",
-            collapsible: true, 
-            collapsed: true,
+            // collapsible: true, 
+            // collapsed: true,
             items: [
               { text: "controlNet让stableDiffusion更可控", link: "/ai/sd/sd-controlnet" },
               { text: "stableDiffusion提示词模板", link: "/ai/sd/sd-prompt-templates" },
             ],
           },
-          // { text: "好用的AI工具汇总", link: "/ai/tools" },
+          {
+            text: "MCP",
+            // collapsible: true, 
+            // collapsed: true,
+            items: [
+              { text: "高德MCP+Cursor生成旅游攻略", link: "/ai/mcp/gaode-cursor-travel-guide" },
+            ],
+          },
           { text: "claude根据效果图生成web页面", link: "/ai/claude" },
         ],
       },
@@ -232,6 +239,7 @@ export default withMermaid({
         items: [
           { text: "VSCode异机同步已安装扩展", link: "/tools/vscode-install-extensions" },
           { text: "Cursor VS Trae", link: "/tools/cursor-vs-trae" },
+          { text: "Cursor无限续杯", link: "/tools/cursor-infinite-cup" },
         ],
       },
       {
