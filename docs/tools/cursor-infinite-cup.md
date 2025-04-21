@@ -1,7 +1,7 @@
 # Cursor无限续杯操作指北
 
 ## 参考地址
-[https://link.zhihu.com/?target=https%3A//github.com/yuaotian/go-cursor-help](https://link.zhihu.com/?target=https%3A//github.com/yuaotian/go-cursor-help)
+[https://github.com/yuaotian/go-cursor-help](https://github.com/yuaotian/go-cursor-help)
 
 ## 具体步骤
 
