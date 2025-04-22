@@ -201,6 +201,7 @@ export default withMermaid({
               { text: "实现角色经过某一区域加速", link: "/ue/basic/characterSpeed" },
               { text: "按键实现物体自转", link: "/ue/basic/actorRotation" },
               { text: "切换关卡中角色控制权", link: "/ue/basic/possessPawn" },
+              { text: "蓝图中添加蓝图组件", link: "/ue/basic/addBlueprintComponent" },
               { text: "实现一个解谜小游戏（第一关）", link: "/ue/basic/roomEscape1" },
               { text: "实现一个解谜小游戏（第二关）", link: "/ue/basic/roomEscape2" },
             ],
