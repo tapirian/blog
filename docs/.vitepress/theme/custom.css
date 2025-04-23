@@ -5,4 +5,21 @@
 
 .medium-zoom-image--opened {
     z-index: 31;
+}
+
+/* 自定义侧边栏宽度 */
+:root {
+    --vp-sidebar-width: 320px;  /* 默认是272px */
+}
+
+/* 适配移动端 */
+@media (min-width: 960px) {
+    .VPSidebar {
+        padding-left: 32px !important;
+        width: var(--vp-sidebar-width) !important;
+    }
+
+    .VPContent.has-sidebar {
+        padding-left: var(--vp-sidebar-width) !important;
+    }
 } 

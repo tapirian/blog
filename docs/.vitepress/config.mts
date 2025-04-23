@@ -256,7 +256,7 @@ export default withMermaid({
         collapsible: true, 
         collapsed: true,
         items: [
-          { text: "gitlab CI/CD", link: "/project/ci-cd" },
+          { text: "实现gitlab CI/CD工作流", link: "/project/ci-cd" },
         ],
       },,
       {
