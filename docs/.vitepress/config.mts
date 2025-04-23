@@ -203,6 +203,7 @@ export default withMermaid({
               { text: "切换关卡中角色控制权", link: "/ue/basic/possessPawn" },
               { text: "蓝图中添加蓝图组件", link: "/ue/basic/addBlueprintComponent" },
               { text: "蓝图通信总结", link: "/ue/basic/blueprintCommunicate" },
+              { text: "蓝图中各种组织方式对比", link: "/ue/basic/blueprintOrganization" },
               { text: "实现一个解谜小游戏（第一关）", link: "/ue/basic/roomEscape1" },
               { text: "实现一个解谜小游戏（第二关）", link: "/ue/basic/roomEscape2" },
             ],
