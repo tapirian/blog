@@ -208,6 +208,12 @@ export default withMermaid({
               { text: "实现一个解谜小游戏（第二关）", link: "/ue/basic/roomEscape2" },
             ],
           },
+          {
+            text: "建筑可视化",
+            items: [
+              { text: "视角平移和缩放", link: "/ue/building-visualization/cameraMovement" },
+            ],
+          }
         ],
       },
       {
