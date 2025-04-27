@@ -212,6 +212,7 @@ export default withMermaid({
             text: "建筑可视化",
             items: [
               { text: "视角平移和缩放", link: "/ue/building-visualization/cameraMovement" },
+              { text: "物体阴影移动效果", link: "/ue/building-visualization/shadowMovement" },
             ],
           }
         ],
