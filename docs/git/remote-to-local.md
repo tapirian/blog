@@ -36,7 +36,7 @@ git remote add origin git@github.com:yijiebaiyi/xxxxx.git
 git branch -M master
 git push -u origin master
 ``` 
-> `git push -u origin master`表示将当前本地分支推送到远程，并关联到master为源仓库
+> `git push -u origin master`表示把你当前分支（master）的代码推送到远程仓库的 master 分支；建立本地的 master 分支和远程的 origin/master 分支的追踪关系。
 
 ## 情景四：本地存在远程仓库源，需要更换远程仓库源
 方法一： 删除旧远程并添加新的
