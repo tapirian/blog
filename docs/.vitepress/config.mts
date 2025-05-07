@@ -260,7 +260,15 @@ export default withMermaid({
         items: [
           { text: "实现gitlab CI/CD工作流", link: "/project/ci-cd" },
         ],
-      },,
+      },
+      {
+        text: "Git",
+        collapsible: true, 
+        collapsed: true,
+        items: [
+          { text: "远程项目关联到本地", link: "/git/remote-to-local" },
+        ],
+      },
       {
         text: "关于",
         link: "/about"
