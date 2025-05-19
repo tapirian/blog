@@ -26,7 +26,7 @@ git push -u origin master
 ```
 > 注意： `git branch -M master` 表示强制重命名当前分支为master分支，即使master分支存在也会覆盖；`git branch -m master`表示如果master分支存在，会报错。
 
-## 情景三：本地又项目文件且有git本地仓库
+## 情景三：本地有项目文件且有git本地仓库
 1. 将分支重命名（或切换到）你要推送的分支名称（主分支，一般为Master）
 2. 添加远程仓库为本地的仓库源
 3. 将本地分支推送到远端，并关联到远程
