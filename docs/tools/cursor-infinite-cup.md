@@ -1,7 +1,7 @@
 # Cursor无限续杯操作指北
 
-## 参考地址
-[https://github.com/yuaotian/go-cursor-help](https://github.com/yuaotian/go-cursor-help)
+## 2025/4/16亲测可用
+参考地址： [https://github.com/yuaotian/go-cursor-help](https://github.com/yuaotian/go-cursor-help)
 
 ## 具体步骤
 
@@ -19,4 +19,10 @@ irm https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/
 
 ----
 ### 
->2025/4/16亲测可用
+
+---
+
+## 解决免费用户只能用gpt4.1的问题
+
+### 换一个新的cursor助手工具，可以解决问题
+[https://github.com/agentcodee/cursor-free-everyday/releases](https://github.com/agentcodee/cursor-free-everyday/releases)
