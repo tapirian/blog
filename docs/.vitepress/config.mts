@@ -268,6 +268,7 @@ export default withMermaid({
         items: [
           { text: "远程项目关联到本地", link: "/git/remote-to-local" },
           { text: "git tag实现发布版本", link: "/git/tag" },
+          { text: "cherry-pick如何解决冲突", link: "/git/cherry-pick" },
         ],
       },
       {
