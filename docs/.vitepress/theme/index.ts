@@ -2,7 +2,7 @@ import DefaultTheme from 'vitepress/theme'
 import 'viewerjs/dist/viewer.min.css'
 import imageViewer from 'vitepress-plugin-image-viewer'
 import { useRoute } from 'vitepress'
-import './custom.css'
+// import './custom.css'
 
 export default {
     ...DefaultTheme,
