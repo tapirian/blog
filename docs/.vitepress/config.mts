@@ -146,6 +146,7 @@ export default withMermaid({
         collapsed: true,
         items: [
           { text: "共享网络打印机凭证冲突", link: "/windows/print-share-conflict" },
+          { text: "windows查看磁盘情况的工具", link: "/windows/scan-disk-tools" },
         ],
       },
       {
