@@ -79,6 +79,7 @@ export default withMermaid({
               { text: "sync.WaitGroup的noCopy机制", link: "/golang/basic/waitGroup-noCopy" },
               { text: "无缓冲通道", link: "/golang/basic/unbuffered-channel" },
               { text: "有缓冲通道", link: "/golang/basic/buffered-channel" },
+              { text: "使用fsnotify监听文件", link: "/golang/apply/fsnotify" },
             ],
           },
           {
