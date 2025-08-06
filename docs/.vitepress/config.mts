@@ -19,6 +19,14 @@ export default withMermaid({
     ],
     sidebar: [ 
       {
+        text: "计算机基础",
+        collapsible: true, 
+        collapsed: true,
+        items: [
+          { text: "进制转换", link: "/computer/decimal-conversion" },
+        ],
+      },
+      {
         text: "安全",
         collapsible: true, 
         collapsed: true,
