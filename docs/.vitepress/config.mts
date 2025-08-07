@@ -112,6 +112,7 @@ export default withMermaid({
         collapsible: true, 
         collapsed: true,
         items: [
+          { text: "C语言数组", link: "/c/array" },
           { text: "C++的内存动态分配", link: "/cpp/cpp" },
         ],
       },
