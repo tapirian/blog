@@ -143,55 +143,107 @@ export default withMermaid({
         ],
       },
       {
-        text: "Linux && Shell",
+        text: "操作系统",
         collapsible: true, 
         collapsed: true,
         items: [
-          { text: "Linux最常用命令总结", link: "/linux/command-usage" },
+          {
+            text: "Linux && Shell",
+            collapsible: true, 
+            collapsed: true,
+            items: [
+              { text: "Linux最常用命令总结", link: "/os/linux/command-usage" },
+            ],
+          },
+          {
+            text: "Windows",
+            collapsible: true, 
+            collapsed: true,
+            items: [
+              { text: "共享网络打印机凭证冲突", link: "/os/windows/print-share-conflict" },
+              { text: "windows查看磁盘情况的工具", link: "/os/windows/scan-disk-tools" },
+            ],
+          },
         ],
       },
       {
-        text: "Windows",
+        text: "数据库",
+        collapsible: true, 
+        collapsed: true,
+        items: [    
+          {
+            text: "MySQL",
+            collapsible: true,    // ✅ 启用折叠功能
+            collapsed: true,       // ✅ 初始折叠状态
+            items: [
+              { text: "MySQL安装与配置", link: "/database/mysql/config" },
+              { text: "MySQL索引", link: "/database/mysql/index" },
+              { text: "MySQL索引核心概念", link: "/database/mysql/index-concept" },
+              { text: "MySQL事务机制", link: "/database/mysql/transaction" },
+              { text: "MySQL视图", link: "/database/mysql/view" },
+              { text: "MySQL用户与权限", link: "/database/mysql/privileges" },
+              { text: "MySQL架构", link: "/database/mysql/structure" },
+              { text: "MySQL主从同步", link: "/database/mysql/master-slave" },
+              { text: "MySQL慢日志定位", link: "/database/mysql/slow-query-log" },
+              { text: "MySQL Binlog日志与数据恢复", link: "/database/mysql/binlog" },
+              { text: "MySQL性能监控", link: "/database/mysql/monitor" }, 
+              { text: "MySQL flush与redo log", link: "/database/mysql/flush" }, 
+            ],
+          },
+          {
+            text: "Redis",
+            collapsible: true, 
+            collapsed: true,
+            items: [
+              { text: "Redis基本数据类型", link: "/database/redis/type" },
+            ],
+          },
+        ],
+      },
+      {
+        text: "消息队列",
         collapsible: true, 
         collapsed: true,
         items: [
-          { text: "共享网络打印机凭证冲突", link: "/windows/print-share-conflict" },
-          { text: "windows查看磁盘情况的工具", link: "/windows/scan-disk-tools" },
+          {
+            text: "RabbitMQ",
+            collapsible: true, 
+            collapsed: true,
+            items: [
+              { text: "RabbitMQ简介", link: "/mq/rabbitmq/start" },
+            ],
+          },
+          {
+            text: "Pulsar",
+            collapsible: true, 
+            collapsed: true,
+            items: [
+              { text: "Pulsar简介", link: "/mq/pulsar/start" },
+            ],
+          },
         ],
       },
       {
-        text: "MySQL",
-        collapsible: true,    // ✅ 启用折叠功能
-        collapsed: true,       // ✅ 初始折叠状态
-        items: [
-          { text: "MySQL安装与配置", link: "/mysql/config" },
-          { text: "MySQL索引", link: "/mysql/index" },
-          { text: "MySQL索引核心概念", link: "/mysql/index-concept" },
-          { text: "MySQL事务机制", link: "/mysql/transaction" },
-          { text: "MySQL视图", link: "/mysql/view" },
-          { text: "MySQL用户与权限", link: "/mysql/privileges" },
-          { text: "MySQL架构", link: "/mysql/structure" },
-          { text: "MySQL主从同步", link: "/mysql/master-slave" },
-          { text: "MySQL慢日志定位", link: "/mysql/slow-query-log" },
-          { text: "MySQL Binlog日志与数据恢复", link: "/mysql/binlog" },
-          { text: "MySQL性能监控", link: "/mysql/monitor" }, 
-          { text: "MySQL flush与redo log", link: "/mysql/flush" }, 
-        ],
-      },
-      {
-        text: "Redis",
+        text: "搜索引擎",
         collapsible: true, 
         collapsed: true,
         items: [
-          { text: "Redis基本数据类型", link: "/redis/type" },
-        ],
-      },
-      {
-        text: "RabbitMQ",
-        collapsible: true, 
-        collapsed: true,
-        items: [
-          { text: "RabbitMQ基础", link: "/rabbitmq/start" },
+          {
+            text: "Elasticsearch",
+            collapsible: true, 
+            collapsed: true,
+            items: [
+              { text: "Elasticsearch简介", link: "/se/elasticsearch/start" },
+            ],
+          },
+          {
+            text: "OpenObserve",
+            collapsible: true, 
+            collapsed: true,
+            items: [
+              { text: "OpenObserve简介", link: "/se/openobserve/start" },
+            ],
+          },
         ],
       },
       {
