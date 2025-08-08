@@ -198,6 +198,15 @@ export default withMermaid({
               { text: "Redis基本数据类型", link: "/database/redis/type" },
             ],
           },
+          {
+            text: "国产数据库",
+            collapsible: true, 
+            collapsed: true,
+            items: [
+              { text: "达梦数据库兼容Mysql", link: "/database/native/dameng-mysql" },
+              { text: "GoldenDB兼容Mysql", link: "/database/native/goldendb-mysql" },
+            ],
+          },
         ],
       },
       {
