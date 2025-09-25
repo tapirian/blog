@@ -45,6 +45,15 @@ export default withMermaid({
         ],
       },
       {
+        text: "Nginx",
+        collapsible: true, 
+        collapsed: true,
+        items: [
+          { text: "使用Docker运行nginx", link: "/nginx/docker-nginx" },
+          { text: "nginx变量简释", link: "/nginx/nginx-variable" },
+        ],
+      },
+      {
         text: "算法",
         collapsible: true,
         collapsed: true,
