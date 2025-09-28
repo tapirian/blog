@@ -52,6 +52,7 @@ export default withMermaid({
           { text: "Nginx简介", link: "/nginx/nginx-readme" },
           { text: "Docker运行Nginx", link: "/nginx/docker-nginx" },
           { text: "Nginx变量", link: "/nginx/nginx-variable" },
+          { text: "Nginx配置指令执行顺序", link: "/nginx/nginx-exec-order" },
         ],
       },
       {
