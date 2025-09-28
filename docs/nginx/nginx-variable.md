@@ -123,10 +123,10 @@ request_uri: /foo/hello%20world/test?a=123
 ```
 请求结果：
 ```
-$ curl 'http://localhost:8080/foo/test?a=123'
+$ curl 'http://localhost:8080/foo/test?id=123'
 args: a=123
 is_args: ?
-arg_id:
+arg_id: 123
 arg_name:
 ```
 > $art_XXX 这样的变量获取到的值是没有经过URL解码的，可以使用第三方 ngx_set_misc 模块提供的 set_unescape_uri 配置指令：
@@ -160,7 +160,7 @@ echo "name: $name";
 | `$fastcgi_path_info`                  | PATH_INFO 部分              |
 
 - 大多数内建变量都是只读的，应该避免重新赋值
-- 有的内建变量可以赋值，比如`$args`，甚至赋值之后可以就影响到别的模块，比如`ngx_proxy`
+- 有的内建变量可以赋值，比如`$args`，甚至赋值之后可以影响到别的模块，比如`ngx_proxy`
 
 ## 变量的存取和索引
 ### 存处理程序（set handler）和取处理程序（get handler）
@@ -172,12 +172,30 @@ echo "name: $name";
 #### 存处理程序（set handler）
 用来设置变量的值，当你用指令给变量赋值时（如 set $a 'value';），会调用存处理程序。有些变量是只读的（例如 `$request_uri`），就没有存处理程序。
 
-### 被索引变量（indexed）和未被索引变量（non-indexed）
-#### 被索引变量（indexed）
-访问速度非常快（O(1)），在 Nginx 启动或配置解析阶段，给变量分配了一个索引号（index），一般是核心变量和模块变量。例如：$host、$uri、$request_uri、$args、$remote_addr等。
+### 索引变量（indexed）和未索引变量（non-indexed）
+索引变量和未索引变量主要在于它们内部存储和访问的方式，以及由此带来的性能影响。
+
+#### 索引变量（indexed）
+访问速度非常快（O(1)），内存地址直接读取，在 Nginx 启动或配置解析阶段，给变量分配了一个索引号（index），常见的有Nginx核心变量和模块变量, 正则捕获组($1~$9)等等。例如：$host、$uri、$request_uri、$args、$remote_addr等。
+> 注: nginx1.0版本, 很多常用的变量都是未索引的,nginx1.2.x+版本大量常用变量改为索引变量。
+
+正则捕获组示例:
+```nginx
+    location ~ ^/user/(\w+)/(\w+)$ {
+        echo "param1: $1";
+        echo "param2: $2";
+    }
+```
+请求:
+```
+$ curl http://localhost:8080/user/1/update
+param1: 1
+param2: update
+```
+上边示例中$1和$2就是索引变量。
 
 #### 未被索引变量（non-indexed）
-访问速度较慢，需要遍历哈希表查找，一般是自定义用户变量或者动态的内建变量。例如：$art_name。
+访问速度较慢，需要遍历哈希表查找，只有在使用时才创建和赋值, 一般是自定义用户变量或者动态的内建变量。例如：$art_name。
 
 ### 总结
 | 类型     | get handler | set handler    | 索引情况  | 访问速度    |
@@ -237,7 +255,7 @@ $ curl 'http://localhost:8080/test'
 1
 ```
 ## 主请求和子请求
-所谓“主请求”，是由HTTP客户端从Nginx外部发起的请求，包括前面内部跳转的例子（`rewrite`和`echo_exec`）。而子请求和HTTP协议乃至网络通信没有一点儿关系，它是Nginx内部为了处理主请求，将任务分解为多个较小粒度的“内部请求”，并发或串行地访问多个location接口。子请求有独立的URI、args、headers、phase处理流程，可以跑完整的location配置链。如`auth_request`模块、`ssi`模块、`echo_location`等等。
+所谓“主请求”，是由HTTP客户端从Nginx外部发起的请求，包括前面内部跳转的例子（`rewrite`和`echo_exec`）。而子请求和HTTP协议乃至网络通信没有一点儿关系，它是Nginx内部为了处理主请求，将任务分解为多个较小粒度的“内部请求”，并发或串行地访问多个location接口。子请求有独立的URI、args、headers、phase处理流程，可以跑完整的location配置链。发起子请求可以使用`auth_request`模块、`ssi`模块、`echo_location`等等。
 
 此外，“子请求”的调用是“有去有回”的，而“内部跳转”是“有去无回”。不能在`echo_exec`之前输出任何东西，包括`echo`指令和`echo_location`发起子请求。因为这样会导致`header/body`状态不一致问题, Nginx会丢弃或关闭连接，报错：`Empty reply from server`。
 
