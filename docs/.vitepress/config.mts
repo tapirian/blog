@@ -96,6 +96,7 @@ export default withMermaid({
             text: "基础",
             items: [
               { text: "基础知识点", link: "/golang/basic/lesser-known-points" },
+              { text: "实现TCP连接", link: "/golang/basic/listen-dial-tcp" },
               { text: "sync.WaitGroup的noCopy机制", link: "/golang/basic/waitGroup-noCopy" },
               { text: "无缓冲通道", link: "/golang/basic/unbuffered-channel" },
               { text: "有缓冲通道", link: "/golang/basic/buffered-channel" },
