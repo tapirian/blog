@@ -96,7 +96,8 @@ export default withMermaid({
             text: "基础",
             items: [
               { text: "基础知识点", link: "/golang/basic/lesser-known-points" },
-              { text: "实现TCP连接", link: "/golang/basic/listen-dial-tcp" },
+              { text: "实现TCP通信", link: "/golang/basic/tcp-handshake" },
+              { text: "实现UDP通信", link: "/golang/basic/udp-handshake" },
               { text: "sync.WaitGroup的noCopy机制", link: "/golang/basic/waitGroup-noCopy" },
               { text: "Golang中的通道", link: "/golang/basic/channel" },
               { text: "使用fsnotify监听文件", link: "/golang/apply/fsnotify" },

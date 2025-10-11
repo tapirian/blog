@@ -1,4 +1,4 @@
-# Golang实现TCP连接
+# Golang实现TCP通信
 ### TCP连接服务端
 实现TCP服务端主是使用到`net`包里面的两个方法：
 - 启动监听	```listener, err := net.Listen("tcp", "127.0.0.1:8000")```
