@@ -175,6 +175,7 @@ export default withMermaid({
             items: [
               { text: "共享网络打印机凭证冲突", link: "/os/windows/print-share-conflict" },
               { text: "windows查看磁盘情况的工具", link: "/os/windows/scan-disk-tools" },
+              { text: "windows释放C盘空间", link: "/os/windows/release-system-disk" },
             ],
           },
         ],
