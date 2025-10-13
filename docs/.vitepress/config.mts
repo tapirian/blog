@@ -42,6 +42,7 @@ export default withMermaid({
         collapsed: true,
         items: [
           { text: "使用Let'Encrypt生成SSL证书", link: "/network/ssl-cert-generate" },
+          { text: "http代理git bash没有生效", link: "/network/http-proxy-unavalible" },
         ],
       },
       {
