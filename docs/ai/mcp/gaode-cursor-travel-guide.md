@@ -4,7 +4,7 @@
 
 **参考资料** [https://juejin.cn/post/7487219720480702527](https://juejin.cn/post/7487219720480702527)
 
-**我的样例** [https://github.com/yijiebaiyi/travel_guide](https://github.com/yijiebaiyi/travel_guide)
+**我的样例** [https://github.com/tapirian/travel_guide](https://github.com/tapirian/travel_guide)
 
 ## 操作步骤
 

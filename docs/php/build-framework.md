@@ -3,7 +3,7 @@
 本人开发的框架在 2021 年年初开发完成，后面没有再做过任何维护和修改。是仅供大家参考交流的学习项目，请勿使用在生产环境，也勿用作商业用途。
 
 框架地址：
-[https://github.com/yijiebaiyi/fast_framework](https://github.com/yijiebaiyi/fast_framework)
+[https://github.com/tapirian/fast_framework](https://github.com/tapirian/fast_framework)
 
 ## 整体思路
 
@@ -789,6 +789,6 @@ class UserList
 
 至此，这款简易的 php 框架的实现过程就介绍完了。更多详细的内容请异步:
 
-[https://github.com/yijiebaiyi/fast_framework](https://github.com/yijiebaiyi/fast_framework)
+[https://github.com/tapirian/fast_framework](https://github.com/tapirian/fast_framework)
 
 这里有详细的代码示例和完整的实现过程。

@@ -6,7 +6,7 @@
 
 直接在本地合适的目录下`git clone`克隆仓库
 ```bash
-git clone git@github.com:yijiebaiyi/xxxxx.git
+git clone git@github.com:tapirian/xxxxx.git
 ```
 
 ## 情景二: 本地有项目文件，但是没有本地仓库
@@ -21,7 +21,7 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M master
-git remote add origin git@github.com:yijiebaiyi/xxxxx.git
+git remote add origin git@github.com:tapirian/xxxxx.git
 git push -u origin master
 ```
 > 注意： `git branch -M master` 表示强制重命名当前分支为master分支，即使master分支存在也会覆盖；`git branch -m master`表示如果master分支存在，会报错。
@@ -32,7 +32,7 @@ git push -u origin master
 3. 将本地分支推送到远端，并关联到远程
 
 ```bash
-git remote add origin git@github.com:yijiebaiyi/xxxxx.git
+git remote add origin git@github.com:tapirian/xxxxx.git
 git branch -M master
 git push -u origin master
 ``` 
@@ -42,12 +42,12 @@ git push -u origin master
 方法一： 删除旧远程并添加新的
 ```bash
 git remote remove origin
-git remote add origin https://github.com/yijiebaiyi/xxxxx.git
+git remote add origin https://github.com/tapirian/xxxxx.git
 ```
 
 方法二： 直接更新（没修改默认远程名为origin）
 ```bash
-git remote set-url origin https://github.com/yijiebaiyi/xxxxx.git
+git remote set-url origin https://github.com/tapirian/xxxxx.git
 ```
 
 > 备注： 可以通过 `git remote -v` 来查看当前的远程地址
