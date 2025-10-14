@@ -28,8 +28,8 @@
 
 另外也可以在`存储`界面设置新文件、新应用保存位置。
 
-#### （2）cleanmgr
-`win+R`打开命令运行窗口，输入命令：`cleanmgr`，选择要清理的C盘驱动器，选择下列几项进行清理：
+#### （2）磁盘清理cleanmgr
+`win+R`打开命令运行窗口，输入命令：`cleanmgr`，或者直接搜索`磁盘清理`，选择要清理的C盘驱动器，选择下列几项进行清理：
 - 临时文件
 - 缓存的缩略图
 - Windows 更新清理
@@ -48,6 +48,8 @@
 > 启动：net start wuauserv && net start bits
 > 
 > 停止：net stop wuauserv && net stop bits
+>
+> 如果删除了之后过段时间，缓存又更新了，可以直接关闭Windows更新服务
 
 
 #### （4）bat脚本，定时执行
