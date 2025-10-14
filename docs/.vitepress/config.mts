@@ -101,6 +101,7 @@ export default withMermaid({
               { text: "实现UDP通信", link: "/golang/basic/net-udp" },
               { text: "实现HTTP通信", link: "/golang/basic/net-http" },
               { text: "实现WebSocket通信", link: "/golang/basic/websocket" },
+              { text: "Golang版本管理", link: "/golang/basic/version-management" },
               { text: "sync.WaitGroup的noCopy机制", link: "/golang/basic/waitGroup-noCopy" },
               { text: "Golang中的通道", link: "/golang/basic/channel" },
               { text: "使用fsnotify监听文件", link: "/golang/apply/fsnotify" },
