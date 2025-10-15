@@ -8,6 +8,7 @@ export default withMermaid({
     class: "mermaid my-class",
   },
   cleanUrls: true,
+  ignoreDeadLinks: true,
   title: "一介白衣ing",
   description: "everything will be fine",
   base: "/blog/",
