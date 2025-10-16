@@ -546,7 +546,7 @@ curl -o trace.out 'http://localhost:6060/debug/pprof/trace?seconds=5'
 go tool trace trace.out
 ```
 
-### 三方工具statsviz
+## 三方工具statsviz
 测试环境还可以使用第三方库statsviz来实时展示Golang的运行指标：https://github.com/arl/statsviz
 
 ```go
