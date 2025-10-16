@@ -28,20 +28,13 @@ export default withMermaid({
         ],
       },
       {
-        text: "安全",
+        text: "网络安全",
         collapsible: true, 
         collapsed: true,
         items: [
           { text: "研发安全攻防", link: "/security/attack_and_guard" },
           { text: "对称加密和非对称加密", link: "/security/encryption" },
           { text: "OpenSSL介绍", link: "/security/openssl" },
-        ],
-      },
-      {
-        text: "网络",
-        collapsible: true, 
-        collapsed: true,
-        items: [
           { text: "使用Let'Encrypt生成SSL证书", link: "/network/ssl-cert-generate" },
           { text: "http代理git bash没有生效", link: "/network/http-proxy-unavalible" },
         ],
