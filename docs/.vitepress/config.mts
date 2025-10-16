@@ -125,6 +125,7 @@ export default withMermaid({
         collapsed: true,
         items: [
           { text: "Nodejs事件循环", link: "/nodejs/eventloop" },
+          { text: "Nodejs包管理器", link: "/nodejs/package-management" },
           { text: "node-addon开发C++插件", link: "/nodejs/node-addon-call-c-library" },
         ],
       },
