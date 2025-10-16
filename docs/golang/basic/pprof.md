@@ -280,7 +280,6 @@ GC频繁主要使用`debug/pprof/allocs`。和内存泄露的排查步骤相似�
 #	0x9e4cc7	main.MockGCfreq+0x27	D:/project/personal-project/demo/golang-demos/pprof/main.go:34
 ```
 
-
 ### 协程泄露
 我们首先模拟写一段协程泄露的代码，进行分析：
 ```go
@@ -367,7 +366,6 @@ go tool pprof -http :8080  http://localhost:6060/debug/pprof/goroutine
 - 1、让外层循环监听 ch（for range ch 或 select <-ch）当 ch 关闭，外层循环退出，整个 goroutine 结束。
 - 2、通道使用结束后，直接关闭。
 ```go
-// 模拟协程泄露
 func GoroutineLeakFixed(ch <-chan struct{}) {
 	for range ch { // ch 被 close 时 loop 结束
 		// 如果确实需要并发处理可在此派发短生命周期的 goroutine
@@ -387,8 +385,168 @@ func MockGoroutineLeak() {
 }
 ```
 
+### 锁竞争问题
+锁竞争问题可能会导致程序卡顿，比如：大量 goroutine 并发写同一个 map，用单个 sync.Mutex 保护，造成显著锁竞争。
+
+#### 模拟代码
+```go
+func MockMutexCompetition() {
+	var mu sync.Mutex
+	data := make(map[int]int)
+
+	competition := func(id int) {
+		for {
+			mu.Lock()
+			data[id]++
+			mu.Unlock()
+			time.Sleep(10 * time.Millisecond)
+		}
+	}
+
+	for i := 0; i < 100; i++ {
+		go competition(i)
+	}
+}
+```
+分析锁竞争，我们用到的profile主要是：`/debug/pprof/mutex`。运行上边的代码，然后浏览器打开：`http://localhost:6060/debug/pprof/mutex?debug=1`我们发现没有太多有用的信息，那是因为我们没有开启采样锁竞争。在上述代码中的协程运行之前注入：
+```
+runtime.SetMutexProfileFraction(1) // 采样所有的锁竞争事件
+```
+我们修改速率为1， 设置为0是关闭采样，设置小于0为获取当前速率。生产环境建议关闭。
+
+#### 分析问题
+
+设置采样速率后再打开：`http://localhost:6060/debug/pprof/mutex?debug=1`。获取到：
+```
+--- mutex:
+cycles/second=2743450477
+sampling period=1
+209789992 18513 @ 0xd14ec5 0xd14ea9 0xafbf81
+#	0xd14ec4	sync.(*Mutex).Unlock+0xa4		D:/Program Files/Go/src/sync/mutex.go:223
+#	0xd14ea8	main.MockMutexCompetition.func1+0x88	D:/project/personal-project/demo/golang-demos/pprof/main.go:89
+```
+因为我们程序中只有一个地方有锁竞争，所以只有一段数据呈现。我们可以从结果中获取以下有效信息：
+- cycles/second=2743450477 这是用于把采样的“周期/计数”换算成时间的基准值（CPU 周期速率），用于将样本值转换为时间度量（可理解为运行时环境下每秒的 CPU 周期数或采样器的速率参考）
+- sampling period=1 采样周期或采样频率参数。这里数值 1 表示采样器记录的粒度（运行时可能表示每次发生竞争就记录，或每 1 次事件采样一次）。
+- **大量**的第一个数字（209789992）与第二个数字（18513）表明在这个调用栈上出现了 18513 次事件，总计采样量为 209789992（采样单位），说明这是一个高频、且影响显著的位置。
+- **sync.(\*Mutex).Unlock** 出现在栈顶，说明采样器把竞争/等待的“归因点”放在了 Unlock 上
+- **main.MockMutexCompetition.func1:89** 说明竞争发生在代码的 89 行附近（即那里在持有/释放锁或在临界区附近），这就是需要重点查看和优化的位置。
+
+或者我们使用`go tool pprof`工具分析
+```bash
+go tool pprof -list MockMutexCompetition  http://localhost:6060/debug/pprof/mutex
+```
+
+### 锁竞争阻塞或IO阻塞
+锁竞争阻塞或IO阻塞，我们一般使用`debug/pprof/block`文件来进行分析。`debug/pprof/block`文件主要捕获的阻塞有：
+- sync.Mutex.Lock
+- sync.Cond.Wait
+- channel 发送/接收阻塞
+- 阻塞在 runtime 相关等待（如等待网络 I/O、系统调用等）
+
+> 注意： `time.Sleep` 本身不会触发block profile，因为它是 runtime 调度器的暂停，不是锁等待。
+
+#### 模拟锁等待
+跟采样锁竞争事件一样，阻塞事件同样需要开启并设置频率。
+```go
+func MockIOBlock() {
+	var mu sync.Mutex
+	runtime.SetBlockProfileRate(1) // 采样所有的阻塞事件
+	for {
+		go func() {
+			mu.Lock()
+			defer mu.Unlock()
+			// 模拟长时间IO阻塞
+			time.Sleep(10 * time.Second)
+		}()
+		time.Sleep(10 * time.Millisecond)
+	}
+}
+```
+
+#### 分析阻塞
+访问：`http://localhost:6060/debug/pprof/block?debug=1`, 得到：
+```
+--- contention:
+cycles/second=2760111301
+532460521632 6 @ 0xa94e31 0xa94e0e 0x87c021
+#	0xa94e30	sync.(*Mutex).Lock+0x50		D:/Program Files/Go/src/sync/mutex.go:90
+#	0xa94e0d	main.MockIOBlock.func1+0x2d	D:/project/personal-project/demo/golang-demos/pprof/main.go:137
+
+14786216 121 @ 0x894d4c 0xa3a995 0xa3fd6a 0xa40a3a 0x87c021
+#	0x894d4b	sync.(*Cond).Wait+0x8b				D:/Program Files/Go/src/sync/cond.go:70
+#	0xa3a994	net/http.(*connReader).abortPendingRead+0xb4	D:/Program Files/Go/src/net/http/server.go:722
+#	0xa3fd69	net/http.(*response).finishRequest+0x89	D:/Program Files/Go/src/net/http/server.go:1654
+#	0xa40a39	net/http.(*conn).serve+0x659			D:/Program Files/Go/src/net/http/server.go:2001
+```
+可以看到第一类阻塞为锁竞争阻塞，问题代码位于：main.MockIOBlock函数，阻塞次数高达532460521632, 一共有6个goroutine阻塞。
+
+第二类阻塞为正常的HTTP等待客户端读写的IO阻塞。
+
+
+#### 解决问题
+一般来说，解决锁竞争的思路就是，减少同时加锁的并发数。有以下几种方法：
+- 限制协程并发数或限制goroutine数量
+- 弃用map，使用channel等无锁机制通信
+- 使用分片map
+- 缩小锁粒度，只做必要的写入
+- 优化锁类型，比如读多写少可以使用读写锁sync.RWMutex
+
+这里用map 分片来解决：
+```go
+func SolveMutexCompetition() {
+	type dataMutex struct {
+		data []map[int]int
+		mu   []sync.Mutex
+	}
+
+	totalSize := 10
+	dm := dataMutex{
+		data: make([]map[int]int, totalSize),
+		mu:   make([]sync.Mutex, totalSize),
+	}
+	for i := 0; i < totalSize; i++ {
+		dm.data[i] = make(map[int]int)
+	}
+
+	runtime.SetMutexProfileFraction(1)
+
+	for i := 0; i < 100; i++ {
+		go func(id int) {
+			lockID := id % totalSize
+			for j := 0; j < 1000; j++ {
+				dm.mu[lockID].Lock()
+				dm.data[lockID][id]++
+				dm.mu[lockID].Unlock()
+				time.Sleep(10 * time.Millisecond)
+			}
+		}(i)
+	}
+}
+```
+优化之后，再访问`http://localhost:6060/debug/pprof/mutex?debug=1`发现当前堆栈调用事件数量明显减少。
+
+## trace工具使用
+### 命令
+trace是Go语言的内置调试工具，查看命令帮助：
+```bash
+go tool trace -h
+```
+根据帮助文档， 我们可以看到：
+- 可以使用`go test -trace=trace.out pkg`生成trace文件
+- 命令`go tool trace trace.out` 会打开web浏览器分析页面
+
+### 结pprof使用trace
+打开pprof调试页，可以直接点击trace按钮，在浏览器下载。也可以使用curl下载：
+```bash
+curl -o trace.out 'http://localhost:6060/debug/pprof/trace?seconds=5'
+```
+然后使用trace工具分析：
+```bash
+go tool trace trace.out
+```
 ## 生产环境使用
-通常**不建议在生产环境使用**`pprof`作性能剖析（生产环境有更好的选择），因为pprof 可以暴露程序的详细内部信息，包括：
+通常**不建议在生产环境使用**`pprof`作性能剖析（生产环境有更好的解决方案），因为pprof 可以暴露程序的详细内部信息，包括：
 - 内存使用情况（heap profile）
 - CPU 占用和调用栈
 - 所有函数调用关系
@@ -403,3 +561,5 @@ func MockGoroutineLeak() {
 ## 参考资料
 - net/http/pprof包： https://pkg.go.dev/net/http/pprof
 - 图形可视化软件graphviz： https://graphviz.org/
+- go tool trace: https://pkg.go.dev/cmd/trace
+- 更强大的go执行跟踪: https://go.dev/blog/execution-traces-2024
