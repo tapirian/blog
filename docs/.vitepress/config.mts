@@ -106,6 +106,7 @@ export default withMermaid({
               { text: "Golang版本管理", link: "/golang/basic/version-management" },
               { text: "VSCode调试Golang程序", link: "/golang/basic/vscode-debugging" },
               { text: "性能剖析工具pprof", link: "/golang/basic/pprof" },
+              { text: "expvar实现运行时状态导出", link: "/golang/basic/expvar" },
               { text: "sync.WaitGroup的noCopy机制", link: "/golang/basic/waitGroup-noCopy" },
               { text: "使用fsnotify监听文件", link: "/golang/apply/fsnotify" },
               { text: "Golang控制协程的并发量", link: "/golang/apply/control-concurrency" },

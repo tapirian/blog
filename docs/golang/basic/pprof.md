@@ -576,7 +576,7 @@ func main() {
 浏览器打开：http://localhost:8080/debug/statsviz/ 可以更直观地看到CPU、Goroutines、GC等各项参数
 
 ## 生产环境使用
-通常**不建议在生产环境使用**`pprof`作性能剖析（生产环境有更好的解决方案），因为pprof 可以暴露程序的详细内部信息，包括：
+通常**不建议在生产环境使用**`pprof`作性能剖析（生产环境可以使用：Prometheus + Go client），因为pprof 可以暴露程序的详细内部信息，包括：
 - 内存使用情况（heap profile）
 - CPU 占用和调用栈
 - 所有函数调用关系
