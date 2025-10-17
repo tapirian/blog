@@ -265,6 +265,8 @@ func MockGCfreq() {
 	}
 }
 ```
+
+#### 分析问题
 GC频繁主要使用`debug/pprof/allocs`。和内存泄露的排查步骤相似，打开：`http://localhost:6060/debug/pprof/allocs?debug=1`,看到有很多项信息和`heap`页相似，但是通过不断刷新页面， 可以看到Alloc偶尔增加又释放，而`TotalAlloc`不断增加，说明GC比较频繁，同时可看到：main.MockGCfreq函数内存地址不断变化，且占用内存较大。
 ```
 0: 0 [2: 32768] @ 0x9d5c0a 0x9d5b0f 0x9d3e2b 0x9e2f05 0x9e3a53 0x991baf 0x993549 0x993549 0x994556 
@@ -279,6 +281,10 @@ GC频繁主要使用`debug/pprof/allocs`。和内存泄露的排查步骤相似�
 0: 0 [3343: 35053895680] @ 0x9e4cc8 0x7cbf81
 #	0x9e4cc7	main.MockGCfreq+0x27	D:/project/personal-project/demo/golang-demos/pprof/main.go:34
 ```
+#### 解决办法
+- 使用复用对象池sync.Pool
+- 减少临时对象分配
+- 避免不必要的map和slice扩容
 
 ### 协程泄露
 我们首先模拟写一段协程泄露的代码，进行分析：

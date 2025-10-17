@@ -92,6 +92,8 @@ export default withMermaid({
             items: [
               { text: "基础知识点", link: "/golang/basic/lesser-known-points" },
               { text: "Golang中的通道", link: "/golang/basic/channel" },
+              { text: "Golang反射", link: "/golang/basic/reflect" },
+              { text: "Golang中的锁", link: "/golang/basic/mutex" },
               { text: "实现TCP通信", link: "/golang/basic/net-tcp" },
               { text: "实现UDP通信", link: "/golang/basic/net-udp" },
               { text: "实现HTTP通信", link: "/golang/basic/net-http" },
