@@ -106,6 +106,7 @@ export default withMermaid({
               { text: "sync.WaitGroup的noCopy机制", link: "/golang/basic/waitGroup-noCopy" },
               { text: "使用fsnotify监听文件", link: "/golang/apply/fsnotify" },
               { text: "Golang控制协程的并发量", link: "/golang/apply/control-concurrency" },
+              { text: "Gin框架速通", link: "/golang/apply/gin-web-framework" },
             ],
           },
           {
