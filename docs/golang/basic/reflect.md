@@ -56,9 +56,10 @@ interface = (type, value)
 | `v.Elem()`                             | 获取指针或容器内的元素值。                              |
 | `v.CanSet()`                           | 检查是否可修改                               |
 | `v.Set()`、`v.SetInt()`、`v.SetString()` | 设置值（需注意是否可修改）。                     |
+| `t.NumField()、t.Field(i)、v.Field(i)`   | 结构体字段数量、第i个字段类型和值         |
+| `tfield.Tag.Get("json")`   | 结构体字段json标签          |
+| `vfield.Interface()`   | 结构体字段的值          |
 | `v.MethodByName()`      | 动态调用方法   |
-| `t.NumField()、t.Field(i)`   | 结构体字段数量、第i个字段          |
-| `field.Tag.Get("json")`   | 结构体字段json标签          |
 ---
 
 ## 三、基础示例：查看和修改
