@@ -111,8 +111,9 @@ export default withMermaid({
               { text: "Fiber框架速通", link: "/golang/apply/fiber-framework" },
               { text: "Beego框架速通", link: "/golang/apply/beego-framework" },
               { text: "Chi框架速通", link: "/golang/apply/chi-framework" },
-              { text: "go-zero框架速通", link: "/golang/apply/zero-framework" },
               { text: "grpc-go框架速通", link: "/golang/apply/grpc-go-framework" },
+              { text: "go-zero框架速通", link: "/golang/apply/zero-framework" },
+              { text: "go-micro框架速通", link: "/golang/apply/go-micro-framework" },
             ],
           },
           {
