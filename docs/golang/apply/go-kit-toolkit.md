@@ -136,6 +136,7 @@ func MakeHTTPHandler(endpoints endpoint.Endpoint) http.Handler {
 
 ### 4. 入口文件
 ```go
+// main.go
 package main
 
 import "net/http"
@@ -149,7 +150,13 @@ func main() {
 }
 ```
 
-测试请求：
+运行服务：
+```bash
+go run .
+```
+> 注意运行服务不要指定文件，使用点`.`代替，因为main包有多个文件，也可以分别把他们都写到命令参数里。
+
+测试请求:
 ```bash
 $ curl -X POST -d '{"a":3,"b":5}' \
 >   -H "Content-Type: application/json" \
@@ -159,12 +166,6 @@ $ curl -X POST -d '{"a":3,"b":5}' \
 ```
 {"result":8}
 ```
-
-
-
-
-
-
 
 ## 参考
 - 官方：https://gokit.io
