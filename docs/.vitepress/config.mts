@@ -114,6 +114,7 @@ export default withMermaid({
               { text: "grpc-go框架速通", link: "/golang/apply/grpc-go-framework" },
               { text: "go-zero框架速通", link: "/golang/apply/zero-framework" },
               { text: "go-micro框架速通", link: "/golang/apply/go-micro-framework" },
+              { text: "go-kit微服务工具包速通", link: "/golang/apply/go-kit-toolkit" },
             ],
           },
           {
