@@ -116,6 +116,7 @@ export default withMermaid({
               { text: "go-micro框架速通", link: "/golang/apply/go-micro" },
               { text: "go-kit微服务工具包", link: "/golang/apply/go-kit" },
               { text: "GORM一文速通", link: "/golang/apply/gorm" },
+              { text: "ent一文速通", link: "/golang/apply/ent" },
             ],
           },
           {
