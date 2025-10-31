@@ -118,6 +118,7 @@ export default withMermaid({
               { text: "GORM一文速通", link: "/golang/apply/gorm" },
               { text: "ent一文速通", link: "/golang/apply/ent" },
               { text: "Bun一文速通", link: "/golang/apply/bun" },
+              { text: "sqlboiler一文速通", link: "/golang/apply/sqlboiler" },
             ],
           },
           {
