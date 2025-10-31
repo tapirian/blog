@@ -102,12 +102,9 @@ func main() {
 		panic(err)
 	}
 
-	// 类型安全测试==
-	// 删除之后再查询（错误的sql: name1不存在的列）
 	var deleteQueryUser User
-	err = db.NewSelect().Model(&deleteQueryUser).Where("name1 = ?", "John").Scan(ctx)
+	err = db.NewSelect().Model(&deleteQueryUser).Where("name = ?", "John").Scan(ctx)
 	if err != nil {
-		// 这里捕获到错误: SQL logic error: no such column: name1
 		panic(err)
 	}
 	fmt.Printf("after deleted user to query again: %+v \n", deleteQueryUser)
