@@ -104,8 +104,12 @@ export default withMermaid({
               { text: "性能剖析工具pprof", link: "/golang/basic/pprof" },
               { text: "expvar实现运行时状态导出", link: "/golang/basic/expvar" },
               { text: "sync.WaitGroup的noCopy机制", link: "/golang/basic/waitGroup-noCopy" },
-              { text: "使用fsnotify监听文件", link: "/golang/apply/fsnotify" },
-              { text: "Golang控制协程的并发量", link: "/golang/apply/control-concurrency" },
+              { text: "标准库之flag包", link: "/golang/basic/flag" },
+            ],
+          },
+          {
+            text: "应用",
+            items: [
               { text: "Gin框架速通", link: "/golang/apply/gin" },
               { text: "Echo框架速通", link: "/golang/apply/echo" },
               { text: "Fiber框架速通", link: "/golang/apply/fiber" },
@@ -120,6 +124,8 @@ export default withMermaid({
               { text: "Bun一文速通", link: "/golang/apply/bun" },
               { text: "sqlboiler一文速通", link: "/golang/apply/sqlboiler" },
               { text: "xorm一文速通", link: "/golang/apply/xorm" },
+              { text: "使用fsnotify监听文件", link: "/golang/apply/fsnotify" },
+              { text: "Golang控制协程的并发量", link: "/golang/apply/control-concurrency" },
             ],
           },
           {
