@@ -1,6 +1,13 @@
 node_modules
-.vscode
-.idea
+.DS_Store
 dist
-cache
-*.mp4
+dist-ssr
+*.local
+.idea
+smartmontools.md
+zsh_history.md
+/*.md
+!/changelog.md
+/package-lock.json
+origin_theme.css
+.vitepress/cache
