@@ -14,10 +14,10 @@ export default defineConfig({
     ignoreDeadLinks: true,
     themeConfig: {
         posts: await getPosts(pageSize),
-        website: 'https://github.com/airene/vitepress-blog-pure', //copyright link
+        // website: 'https://github.com/airene/vitepress-blog-pure', //copyright link
         // 评论的仓库地址 https://giscus.app/ 请按照这个官方初始化后覆盖
         comment: {
-            repo: 'airene/vitepress-blog-pure',
+            repo: 'tapirian/blog',
             repoId: 'MDEwOlJlcG9zaXRvcnkzODIyMjY5Nzg',
             categoryId: 'DIC_kwDOFshSIs4CpZga'
         },
