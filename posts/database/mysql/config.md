@@ -145,6 +145,7 @@ REVOKE SUPER ON . FROM 'root'@'%';
 ```
 
 ### 4.3 防火墙配置
+防火墙放行3306端口:
 ```bash
 # CentOS
 firewall-cmd --permanent --add-port=3306/tcp
@@ -153,6 +154,12 @@ firewall-cmd --reload
 # Ubuntu
 ufw allow 3306/tcp
 ```
+
+使用iptables防火墙配置
+```bash
+iptables -I INPUT -p tcp --dport 3306 -j ACCEPT
+```
+
 ### 4.4 忘记密码（8.0版本）
 (1) 进入安全模式，跳过权限认证：
 

@@ -264,3 +264,6 @@ enforce_gtid_consistency=ON
 2. **灾备方案**：至少配置1主2从，跨机房部署从库
 3. **定期演练**：每季度执行主从切换测试（`SHOW PROCESSLIST; STOP SLAVE; START SLAVE;`）
 
+
+## 参考
+- https://segmentfault.com/a/1190000010867488
