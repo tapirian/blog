@@ -1,5 +1,6 @@
 ---
-date: 2024-05-30
+# date: 2024-05-30
+date: 置顶 
 title: Golang性能剖析工具pprof
 category: Golang 
 tags:

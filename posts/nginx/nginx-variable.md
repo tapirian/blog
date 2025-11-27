@@ -1,11 +1,12 @@
 ---
-date: 2025-05-09
-title: Nginx 变量 
+# date: 2025-05-09
+date: 置顶 
+title: Nginx 变量详解
 category: Nginx
 tags:
 - Nginx 
 ---
-# Nginx 变量
+# Nginx 变量详解
 
 ## 前言
 我们使用Docker在Windows运行OpenResty，代理到本机8080端口来测试Nginx相关功能。

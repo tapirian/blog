@@ -1,6 +1,7 @@
 ---
-date: 2023-11-11
-title: Golang中的锁sync.Mutex和sync.RWMutex
+# date: 2023-11-11
+date: 置顶 
+title: Golang中的锁和sync包相关方法详解
 category: Golang 
 tags:
 - Golang
@@ -8,7 +9,7 @@ tags:
 - 并发
 ---
 
-# Golang中的锁 sync.Mutex和sync.RWMutex 
+# Golang中的锁和sync包相关方法详解
 锁（Lock）是并发编程中用于保护共享资源、避免数据竞争的重要机制。Golang标准库sync主要提供了两种锁，普通互斥锁`sync.Mutex`和读写锁`sync.RWMutex`
 
 ## 普通互斥锁sync.Mutex
