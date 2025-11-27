@@ -1,7 +1,7 @@
 ---
 # date: 2025-03-27
 date: 置顶
-title: 使用UE实现一个解谜小游戏（第一关）
+title: 使用UE实现一个解谜小游戏
 category: UE
 tags:
 - UE
