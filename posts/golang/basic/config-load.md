@@ -1,10 +1,10 @@
 ---
 date: 2024-11-26
 title: 多项目开发环境配置文件切换的探讨
-category: golang
+category: Golang
 tags:
 - 架构设计
-- golang
+- Golang
 ---
 
 # 多项目开发环境配置文件切换的探讨
