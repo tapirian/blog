@@ -398,7 +398,7 @@ slice的切片操作s[i:j]，其中0 ≤ i≤ j≤ cap(s)，用于创建一个�
 months := [...]string{1: "January", /* ... */, 12: "December"}
 ```
 让我们分别定义表示第二季度和北方夏天月份的slice，它们有重叠部分：
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/a91cb71a59c2f8da3ae1785374227e87.png)
+![在这里插入图片描述](../image/helloworld-1.png)
 ```go
 Q2 := months[4:7]
 summer := months[6:9]
@@ -688,7 +688,7 @@ func main() {
 ```
 
 b := &a的图示：
-![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/dd942181dce85b1c918dd5b746d9a67f.png)
+![在这里插入图片描述](../image/helloworld-2.png)
 变量、指针地址、指针变量、取地址、取值的相互关系和特性如下：
 
 对变量进行取地址（&）操作，可以获得这个变量的指针变量。
