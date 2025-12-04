@@ -3,7 +3,6 @@ date: 2021-03-02
 title: 一文带你快速入门TypeScript
 category: JavaScript 
 tags:
-- JavaScript
 - TypeScript
 - 前端
 ---
